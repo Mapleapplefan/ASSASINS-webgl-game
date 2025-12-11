@@ -98,3 +98,47 @@ background-position: top;
     margin: 10px 0;
     font-size: 1.1em;
 }
+
+/* CREDIT CARDS */
+.credits-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.credit-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.12); /* translucent box */
+  backdrop-filter: blur(6px);
+}
+
+.credit-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: rgba(255,255,255,0.2);
+}
+
+.credit-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;   /* ← This forces name + role to left-align */
+}
+
+.credit-name {
+  font-size: 1.8rem;
+  margin: 0;
+  color: white;
+}
+
+.credit-role {
+  font-size: 1rem;
+  margin: 2px 0 0 0;
+  opacity: 0.8;
+  color: white;
+}
