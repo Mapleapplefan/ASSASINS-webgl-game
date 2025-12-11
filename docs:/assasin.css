@@ -1,0 +1,100 @@
+
+/* chat i'm changing the game dimensions */
+.game-wrapper {
+  position: relative;
+  z-index: -1;
+  margin: 10px auto;
+}
+
+#unity-canvas {
+  width: 720px;
+  height: 540px;
+  background: #231F20;
+}
+/* these are the game canvas dimensions chat*/
+
+.header {
+  text-align: center;
+}
+
+body{
+    text-align: center; 
+    padding: 0; 
+    border: 0; 
+    margin: 0;
+}
+
+.parallax-bg {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: linear-gradient(to bottom, #d77548, #44c4dd); 
+    z-index: -1;
+}
+.parallax-layer {
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    background-repeat: repeat-x; 
+    background-position: bottom;
+}
+
+.content-wrapper {
+    position: relative; 
+    z-index: 1; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 40px -50px;
+}
+
+.leaves-layer-1,
+.leaves-layer-2 {
+    position: absolute; 
+    top: -300px;
+    width: 100%;
+    height: 100%;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: contain;
+    z-index: 100;
+    opacity: 0;
+}
+
+.leaf {
+background-position: top;
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.info-section {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.key {
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: monospace;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin: 0 5px;
+}
+
+.credits-list p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}

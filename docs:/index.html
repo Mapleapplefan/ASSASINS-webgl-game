@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | ASSASSINS MVP</title>
+    <link rel="stylesheet" href="assasin.css" />  
+  </head>
+  <body>
+    
+    <div class="parallax-bg">
+      <div class="parallax-layer layer-1" style="background: url('Back Buildings3.PNG') repeat-x bottom; background-size: auto 40%; opacity: 0.6;"></div>
+      <div class="parallax-layer layer-2" style="background: url('Back Buildings2.PNG') repeat-x bottom; background-size: auto 50%; opacity: 0.7;"></div>
+      <div class="parallax-layer layer-3" style="background: url('Front Buildings.PNG') repeat-x bottom; background-size: auto 60%; opacity: 0.8;"></div>
+      <div class="parallax-layer leaves-layer-1"  style="background: url('Leaves.PNG')"></div>
+      <div class="parallax-layer leaves-layer-2" style="background: url('Leaves2.PNG')"></div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="header" style="text-align: center;">
+        <img class="logo-image" src="ASSASINS.PNG" alt="Assassins MVP Logo" style="max-width:60%; min-width:500px">
+      </div>
+    </div>
+
+    <section class = "game-wrapper">
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
+      <script src="Build/BuildTwo.loader.js"></script>
+      <script>
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+          // Mobile device style: fill the whole browser client area with the game canvas:
+          var meta = document.createElement('meta');
+          meta.name = 'viewport';
+          meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+          document.getElementsByTagName('head')[0].appendChild(meta);
+
+          var canvas = document.querySelector("#unity-canvas");
+          canvas.style.width = "100%";
+          canvas.style.height = "100%";
+          canvas.style.position = "fixed";
+
+          document.body.style.textAlign = "left";
+        }
+
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+          dataUrl: "Build/BuildTwo.data.br",
+          frameworkUrl: "Build/BuildTwo.framework.js.br",
+          codeUrl: "Build/BuildTwo.wasm.br",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "DefaultCompany",
+          productName: "ASSASSINS MVP",
+          productVersion: "1.0",
+          matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+          devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        });
+      </script>
+    </section>
+
+    <section class="info-section controls-section">
+        <h2>Controls/How to Play</h2>
+        <div class="controls-grid">
+          <div class="control-item">
+            <span class="key">A</span> / <span class="key">D</span> → left, right 🏃
+          </div>
+          <div class="control-item">
+            <span class="key">Space</span> → jump 🦘
+          </div>
+          <div class="control-item">
+            <span class="key">E</span> → climb 🧗 🪜
+          </div>
+        </div>
+    </section>
+
+    <section class="info-section about-section">
+        <h2>About the Game</h2>
+        <p>Assassins is a blah blah blah game where you do blah blah  
+          to achieve blah blah. The main objective is to blah blah while 
+          avoiding blah blah. Enjoy the thrilling experience of being an
+           assassin in a dynamic environment!</p>
+    </section>
+
+    <section class="info-section credits-section">
+        <h2>Credits/Authors</h2>
+        <div class="credits-list">
+          <p><strong>Programmer:</strong> [Your Name]</p>
+          <p><strong>Artist:</strong> [Your Name]</p>
+          <p><strong>Sound:</strong> [Your Name]</p>
+          <p><strong>Game Design:</strong> [Your Name]</p>
+        </div>
+      </section>
+
+      <!-- PARALLAX BABYYY-->
+      <script>
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const layers = document.querySelectorAll('.parallax-layer');
+        
+        layers.forEach((layer, index) => {
+          const speed = (index + 1) * 0.3;
+          layer.style.transform = `translateY(${scrolled * speed}px)`;
+            
+        });const leavesLayer1 = document.querySelector('.leaves-layer-1');
+        const leavesLayer2 = document.querySelector('.leaves-layer-2');
+
+        if (scrolled >= 100 && scrolled <= 500) {
+          leavesLayer1.style.transform = `translateY(${(scrolled - 100) * 0.4}px)`;
+          leavesLayer2.style.transform = `translateY(${(scrolled - 100) * 0.7}px)`;
+          leavesLayer1.style.opacity = Math.min((scrolled - 100) / 100, 1);
+          leavesLayer2.style.opacity = Math.min((scrolled - 100) / 100, 1);
+        } else if (scrolled > 500) {
+          leavesLayer1.style.transform = `translateY(${(500 - 100) * 0.4}px)`; 
+          leavesLayer2.style.transform = `translateY(${(500 - 100) * 0.7}px)`; 
+          leavesLayer1.style.opacity = '1';
+          leavesLayer2.style.opacity = '1';
+        } else {
+          leavesLayer1.style.transform = `translateY(0px)`;
+          leavesLayer2.style.transform = `translateY(0px)`;
+          leavesLayer1.style.opacity = '0';
+          leavesLayer2.style.opacity = '0';
+}
+        
+        
+      });
+    </script>
+    
+  </body>
+</html>
