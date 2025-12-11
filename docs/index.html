@@ -22,38 +22,7 @@
       </div>
     </div>
 
-    <section class = "game-wrapper">
-      <canvas id="unity-canvas" tabindex="-1"></canvas>
-      <script src="Build/BuildTwo.loader.js"></script>
-      <script>
-        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-          // Mobile device style: fill the whole browser client area with the game canvas:
-          var meta = document.createElement('meta');
-          meta.name = 'viewport';
-          meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-          document.getElementsByTagName('head')[0].appendChild(meta);
-
-          var canvas = document.querySelector("#unity-canvas");
-          canvas.style.width = "100%";
-          canvas.style.height = "100%";
-          canvas.style.position = "fixed";
-
-          document.body.style.textAlign = "left";
-        }
-
-        createUnityInstance(document.querySelector("#unity-canvas"), {
-          dataUrl: "Build/BuildTwo.data.br",
-          frameworkUrl: "Build/BuildTwo.framework.js.br",
-          codeUrl: "Build/BuildTwo.wasm.br",
-          streamingAssetsUrl: "StreamingAssets",
-          companyName: "DefaultCompany",
-          productName: "ASSASSINS MVP",
-          productVersion: "1.0",
-          matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-          devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-        });
-      </script>
-    </section>
+    <iframe frameborder="0" src="https://itch.io/embed-upload/9441056?color=13353d" allowfullscreen="" width="620" height="490"><a href="https://iamcheeze.itch.io/decryptor">Play DECRYPTOR on itch.io</a></iframe>
 
     <section class="info-section controls-section">
         <h2>Controls/How to Play</h2>
@@ -79,14 +48,33 @@
     </section>
 
     <section class="info-section credits-section">
-        <h2>Credits/Authors</h2>
-        <div class="credits-list">
-          <p><strong>Programmer:</strong> [Your Name]</p>
-          <p><strong>Artist:</strong> [Your Name]</p>
-          <p><strong>Sound:</strong> [Your Name]</p>
-          <p><strong>Game Design:</strong> [Your Name]</p>
+      <h2>Credits / Authors</h2>
+
+      <div class="credit-card">
+        <img src="Placeholder.png" class="credit-img" alt="">
+        <div class="credit-text">
+          <h3 class="credit-name">Programmer Name</h3>
+          <p class="credit-role">Lead Programmer</p>
         </div>
-      </section>
+      </div>
+
+      <div class="credit-card">
+        <img src="Placeholder.png" class="credit-img" alt="">
+        <div class="credit-text">
+          <h3 class="credit-name">Artist Name</h3>
+          <p class="credit-role">Character & Environment Artist</p>
+        </div>
+      </div>
+
+      <div class="credit-card">
+        <img src="Placeholder.png" class="credit-img" alt="">
+        <div class="credit-text">
+          <h3 class="credit-name">Sound Person</h3>
+          <p class="credit-role">Music & SFX</p>
+        </div>
+      </div>
+    </section>
+
 
       <!-- PARALLAX BABYYY-->
       <script>
